@@ -13,7 +13,7 @@ namespace MiniBanco.consoleApp
             decimal LimiteChequeEspecial)
             : base(titular, numero, saldoInicial)
         {
-            LimiteChequeEspecial = limiteChequeEspecial;
+           limiteChequeEspecial = LimiteChequeEspecial;
         }
 
         public override void Sacar(decimal valor)
