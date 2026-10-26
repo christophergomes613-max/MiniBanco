@@ -122,6 +122,25 @@ public void ExibirRelatorio(Conta conta)
     Console.WriteLine($"Número: {conta.Numero}");
     Console.WriteLine($"Saldo: R$ {conta.Saldo:F2}");
 
+        if (conta is ContaCorrente corrente)
+        {
+            Console.WriteLine("Tipo: Conta Corrente");
+            Console.WriteLine($"Limite do cheque especial: R$ {corrente.limiteChequeEspecial:F2}");
+        }
+        else if (conta is ContaPoupanca poupanca)
+        {
+            Console.WriteLine("Tipo: Conta Poupança");
+            Console.WriteLine($"Rendimento mensal: {poupanca.RendimentoPercentual}%");
+            Console.WriteLine($"Dia de aniversário: {poupanca.DiaAniversario}");
+        }
+        else if (conta is ContaSalario salario)
+        {
+            Console.WriteLine("Tipo: Conta Salário");
+            Console.WriteLine($"Empregador: {salario.Empregador}");
+            Console.WriteLine($"Limite de saques mensais: {salario.LimiteSaquesMensais}");
+        }
+
+
 Console.WriteLine("\n--- Análise Financeira ---");
 
 Console.WriteLine(
